@@ -38,7 +38,8 @@ std::pair<int, int> Tracker::getDrivetime()
     int zero_speed_consecutive_intervals = 0;
 
     SpeedTimeStamp prev_ts = {0, 0};    // fictional 00:00:00 zero-speed point
-    m_points.emplace_back(SpeedTimeStamp{c_day_end, 0});    // fictional 23:59:59 zero-speed point
+    if(m_points.back().time < c_day_end)
+        m_points.emplace_back(SpeedTimeStamp{c_day_end, 0});    // fictional 23:59:59 zero-speed point
 
     // from prev = 00:00:00 to 23:59:59 = m_points.back()
     for(const SpeedTimeStamp& cur_ts: m_points)
