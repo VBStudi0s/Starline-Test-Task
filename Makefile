@@ -22,6 +22,7 @@ start-debug: build-debug
 
 tests: build-debug
 	@cd ./build_debug/unittests && ./runUnitTests
+	@cd ./build_debug && ./main ../tests/test_run/log.csv ../tests/test_run/ans.txt
 
 clean:
 	@rm -rf build*

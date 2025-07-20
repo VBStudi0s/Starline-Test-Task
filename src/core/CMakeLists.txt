@@ -1,2 +1,3 @@
 add_subdirectory(Tracker)
 add_subdirectory(TrackingManager)
+add_subdirectory(ProcessTrackedData)

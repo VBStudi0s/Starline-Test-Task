@@ -9,7 +9,7 @@ namespace tracker
 TrackerFileReader::TrackerFileReader(const std::string& filename):
     m_ifstream(filename)
 {
-    if(m_ifstream.is_open())
+    if(!m_ifstream.is_open())
         throw std::runtime_error("Unable to open input file: " + filename);
 }
 
@@ -55,6 +55,11 @@ std::pair<std::string, SpeedTimeStamp> TrackerFileReader::readNext()
         throw std::runtime_error("Unable to parse id string from line:" + line);
     if(!getline(ss, speed_str, ','))
         throw std::runtime_error("Unable to parse speed string from line:" + line);
+
+    if(date_time_str[0] == '"')
+        date_time_str = date_time_str.substr(1, date_time_str.size()-1);
+    if(date_time_str.back() == '"')
+        date_time_str = date_time_str.substr(0, date_time_str.size()-1);
 
     int time_seconds = parseTime(date_time_str);
     int speed = std::stoi(speed_str);

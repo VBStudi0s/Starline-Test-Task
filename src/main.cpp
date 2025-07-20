@@ -1,17 +1,23 @@
 #include <iostream>
+#include <string>
 
-#include "./core/Tracker/Tracker.hpp"
-#include "./core/TrackingManager/TrackingManager.hpp"
+#include "./core/ProcessTrackedData/ProcessTrackedData.hpp"
 
 int main(int argc, char* argv[])
 {
-    tracker::TrackingManager tm;
-    tm.addTimePoint("123", {12, 6});
-    std::cout<<tm.getDrivetimeByID("123").first<<'\n';
-
-    tm.addTimePoint("123", {15, 6});
-    tm.addTimePoint("123", {16, 6});
-    tm.addTimePoint("123", {19, 6});
-    std::cout<<tm.getDrivetimeByID("123").first<<'\n';
-
+    if(argc != 3)
+    {
+        std::cerr<<"Usage: "<<argv[0]<<" <input.csv> <outout.txt>\n";
+        return 1;
+    }
+    try
+    {
+        tracker::processTrackedData(std::string(argv[1]), std::string(argv[2]));
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr<<"Error: "<<e.what()<<'\n';
+        return 2;
+    }
+    return 0;
 }

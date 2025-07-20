@@ -19,6 +19,7 @@ target_link_libraries(main PRIVATE
     TrackingLib 
     TrackerReaderLib 
     TrackerFileWriterLib
+    ProcessTrackedDataLib
 )
 
 if(BUILD_TESTS)
