@@ -14,7 +14,7 @@ add_subdirectory(${SOURCE_DIR})
 
 add_executable(main ${SOURCE_DIR}/main.cpp)
 
-target_link_libraries(main PRIVATE TrackerLib TrackingLib)
+target_link_libraries(main PRIVATE TrackerLib TrackingLib TrackerReaderLib)
 
 if(BUILD_TESTS)
     # unittests
