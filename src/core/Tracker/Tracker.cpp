@@ -52,7 +52,7 @@ std::pair<int, int> Tracker::getDrivetime()
         }
         else    // interval is less than c_standing_time
         {
-            if(prev_ts.speed == 0)   // interval might be small stand less than c_standing time but consecutive
+            if(prev_ts.speed == 0 && cur_ts.speed == 0)   // interval might be small stand less than c_standing time but consecutive
                 zero_speed_consecutive_intervals += time_interval;
             else    // interval < c_standing_time and speed was > 0 => (at least now started) moving
             {
