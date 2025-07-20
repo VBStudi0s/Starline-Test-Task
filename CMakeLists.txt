@@ -10,4 +10,4 @@ add_subdirectory(${SOURCE_DIR})
 
 add_executable(main ${SOURCE_DIR}/main.cpp)
 
-# target_ling_libraries()
+target_link_libraries(main PRIVATE TrackerLib)
