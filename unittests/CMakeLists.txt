@@ -9,6 +9,7 @@ include_directories(${GTEST_INCLUDE_DIR})
 # Add test cpp file
 add_executable(runUnitTests
     test_tracker.cpp
+    test_tracking_manager.cpp
 )
 
 # Link test executable against gtest & gtest_main
@@ -16,6 +17,7 @@ target_link_libraries(runUnitTests PRIVATE
     ${GTEST_LIBRARY_DEBUG} ${GTEST_MAIN_LIBRARY_DEBUG}
     GTest::gtest_main
     TrackerLib
+    TrackingLib
 )
 
 add_test(
