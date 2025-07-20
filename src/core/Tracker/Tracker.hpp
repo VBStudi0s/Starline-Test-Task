@@ -12,6 +12,8 @@ class Tracker
 {
     std::vector<SpeedTimeStamp> m_points;
 public:
+    Tracker();
+
     void addTimePoint(SpeedTimeStamp timepoint);
     
     /* Returns <standing_time, driving_time> */

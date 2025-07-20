@@ -9,6 +9,10 @@ namespace tracker
 constexpr int c_standing_time = 2*60;
 constexpr int c_day_end = 23*60*60 + 59*60 + 59;
 
+Tracker::Tracker()
+{
+    m_points.reserve(20);
+}
 
 void Tracker::addTimePoint(SpeedTimeStamp timepoint)
 {
