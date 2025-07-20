@@ -15,10 +15,10 @@ build-release: build-release/Makefile
 .PHONY: build-release/Makefile build-release build-debug/Makefile build-debug start tests
 
 start-release: build-release
-	@cd ./build_release && ./main
+	@cd ./build_release && ./main $(ARGS)
 
 start-debug: build-debug
-	@cd ./build_debug && ./main
+	@cd ./build_debug && ./main $(ARGS)
 
 tests: build-debug
 	@cd ./build_debug/unittests && ./runUnitTests
