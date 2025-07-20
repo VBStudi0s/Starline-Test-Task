@@ -29,6 +29,6 @@ TEST_F(TrackerTest, Basic)
     tr.addTimePoint({8, 1});
 
     auto actual = tr.getDrivetime();
-    auto expected = std::pair<int, int>({c_day_end-2*3, 2*3});
+    auto expected = std::pair<int, int>({c_day_end-6, 6});
     EXPECT_EQ(actual, expected);
 }

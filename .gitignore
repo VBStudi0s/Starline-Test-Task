@@ -1,2 +1,2 @@
 build*
-tests/test_run*
+tests/test_run/ans.txt

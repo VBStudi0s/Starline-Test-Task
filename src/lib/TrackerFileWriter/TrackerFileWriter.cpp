@@ -23,8 +23,8 @@ float TrackerFileWriter::convertSecToHours(int seconds)
 void TrackerFileWriter::writeDrivetimeByID(const std::string& id, std::pair<int, int> drivetime)
 {
     m_ofstream<<"id: "<<id<<'\n';
-    m_ofstream<<"время в пути: " << std::fixed<<std::setprecision(1)<<convertSecToHours(drivetime.second)<<'\n';
-    m_ofstream<<"время стоянки: " << std::fixed<<std::setprecision(1)<<convertSecToHours(drivetime.first)<<'\n';
+    m_ofstream<<"время в пути: " << std::fixed<<std::setprecision(1)<<convertSecToHours(drivetime.second)<<"h\n";
+    m_ofstream<<"время стоянки: " << std::fixed<<std::setprecision(1)<<convertSecToHours(drivetime.first)<<"h\n";
     m_ofstream<<m_separator;
 }
 
